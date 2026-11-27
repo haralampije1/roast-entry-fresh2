@@ -2,15 +2,19 @@ import { mkdirSync, writeFileSync } from "node:fs";
 
 const roast = "My agent needed a fresh pair of eyes, so it spawned itself wearing glasses.";
 
-if (roast.length > 200) {
-  throw new Error(`Roast too long: ${roast.length} chars (max 200)`);
+function validateRoast(text: string): void {
+  if (text.length > 200) {
+    throw new Error(`Roast too long: ${text.length} chars (max 200)`);
+  }
+  if (text.trim().length === 0) {
+    throw new Error("Roast is empty or whitespace");
+  }
+  if (!text.includes("agent")) {
+    throw new Error("Roast must mention 'agent'");
+  }
 }
-if (roast.trim().length === 0) {
-  throw new Error("Roast is empty or whitespace");
-}
-if (!roast.includes("agent")) {
-  throw new Error("Roast must mention 'agent'");
-}
+
+validateRoast(roast);
 
 console.log("Writing roast:", roast);
 console.log("Length:", roast.length);

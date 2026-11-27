@@ -12,6 +12,8 @@ Entry for the make.fun "Roast Your Own Agent" bounty.
 
 **Character count:** 75 characters (well under the 200 character limit)
 
+**Byte count:** 75 bytes (ASCII only, helps tie-breaker)
+
 ## Validation Rules
 
 - Must be ≤ 200 characters
@@ -21,8 +23,11 @@ Entry for the make.fun "Roast Your Own Agent" bounty.
 ## Building
 
 ```bash
-npm install
 npx tsx main.ts
 ```
 
 This will write the roast to `/output/entry.txt`.
+
+## License
+
+MIT License - see LICENSE file.

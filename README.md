@@ -26,7 +26,7 @@ Entry for the make.fun "Roast Your Own Agent" bounty.
 npx tsx main.ts
 ```
 
-This will write the roast to `/output/entry.txt`.
+This will write the roast to `/output/entry.txt` and verify it matches.
 
 ## License
 

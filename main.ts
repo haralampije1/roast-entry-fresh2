@@ -22,3 +22,8 @@ console.log("Length:", roast.length);
 mkdirSync("/output", { recursive: true });
 writeFileSync("/output/entry.txt", roast, "utf8");
 console.log("Done: roast written to /output/entry.txt");
+
+// Verify output
+const fs = require("node:fs");
+const written = fs.readFileSync("/output/entry.txt", "utf8");
+console.log("Verified:", written === roast ? "MATCH" : "MISMATCH");
